@@ -1,0 +1,47 @@
+#		Blaster	v4.1a	Pin	connections, KT-Link functionality
+#	
+#	see:
+#	-	http://dangerousprototypes.com/docs/Minouche_:__Blaster_v4
+#	-	http://dangerousprototypes.com/docs/images/6/66/Cct-Blaster-v4.png
+# p14-p60 Bank1 'A', p1-p13 & p61-p100 Bank2 'B'
+
+# FT2232H Side
+net	"ft_rx_p"			loc	=	"p16";					#	bd1
+
+net	"ft_tdi_oe_np"		loc	=	"p27"	|	pullup;		#	ac5
+net	"ft_led_np"			loc	=	"p36";					#	ac7
+net	"ft_tck_oe_np"		loc	=	"p37"	|	pullup;		#	ac6
+net	"ft_tms_oe_np"		loc	=	"p39"	|	pullup;		#	ac4
+net	"ft_srst_oe_np"		loc	=	"p40"	|	pullup;		#	ac3 gpioH3
+net	"ft_trst_oe_np"		loc	=	"p41"	|	pullup;		#	ac2 gpioH2
+net	"ft_srst_out_p"		loc	=	"p42";					#	ac1 gpioH1
+net	"ft_trst_out_p"		loc	=	"p43";					#	ac0 gpioH0
+net	"ft_rtck_p"			loc	=	"p49";					#	ad7 gpioL3
+net	"ft_srst_in_p"		loc	=	"p50";					#	ad6 gpioL2 (not implemented in Urjtag)
+net	"ft_swd_en_np"		loc	=	"p52";					#	ad5 gpioL1 (swd enable)
+net	"ad4"				loc	=	"p53";					#	ad4 gpioL0 (not used)
+net	"ft_tms_p"			loc	=	"p55";					#	ad3 tms
+net	"ft_tdo_p"			loc	=	"p56";					#	ad2 tdo
+net	"ft_tdi_p"			loc	=	"p58";					#	ad1 tdi 
+net	"ft_tck_p"			loc	=	"p60";					#	ad0 tck
+
+#	JTAG Side
+net	"button_np"			loc	=	"p61";
+net	"led_p"				loc	=	"p64";
+
+#	jtag connector, corrected for direct flat cable; pin1 EJTAG <> pin 15 BB v4
+#	pod													original pod																	
+net	"dbgack_p"			loc	=	"p76"	|	pullup;		# pin 19 dbgack_p, not implemented ejtag
+net	"rtck_p"			loc	=	"p77";					# pin 17 dbgrq_p, dint
+net	"trst_np"			loc	=	"p78";					# pin 15 srst_np
+net	"tdi_p"				loc	=	"p79";					# pin 13 tdo_p
+net	"tdo_p"				loc	=	"p81";					# pin 11 rtck_p
+
+net	"tms_p"				loc	=	"p91";					# pin 9 tck_p
+net	"tck_p"				loc	=	"p92";					# pin 7 tms_p
+net	"srst_np"			loc	=	"p94";					# pin 5 tdi_p
+net	"dbgrq_p"			loc	=	"p97";					# pin 3 trst_np
+
+
+
+
